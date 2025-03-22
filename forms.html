@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Forms</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="formsheet.css">
+    <link rel="icon" type="image/png" href="logo.png">
+    <script>
+        score=0;
+      function checkanswer(qname,aindex){ i=0;
+        radios = document.getElementsByName(qname);
+        rightbox= radios[aindex].parentElement;
+        rightbox.style.display="block";
+        rightbox.style.backgroundColor="green";
+      
+        for(i=0;i<radios.length;i++){
+            if(radios[i].checked)
+            if(radios[i].value==radios[aindex].value){
+            score++;
+            rightbox.innerHTML+=' <i class="fa-solid fa-check"></i>';
+            break;}
+            else{
+                wrongbox=radios[i].parentElement;
+                wrongbox.style.display="block";
+                wrongbox.style.backgroundColor="red";
+            wrongbox.innerHTML+=' <i class="fa-solid fa-xmark"></i>'}}
+            
+        }
+     function checktext(){
+        x=document.getElementById('a4').value;
+        if(parseInt(x)==21){
+        score++;
+       }
+     document.getElementById('textbut').innerHTML='correct answer: <b>21</b>. check the link below:<br><a href="https://www.google.com/url?sa=t&source=web&rct=j&opi=89978449&url=https://www.tutorialspoint.com/compare-ptrplusplus-plusplusptr-and-plusplus-ptr-in-cplusplus&ved=2ahUKEwjIhNTAl42MAxUShv0HHcgJCvcQFnoECEUQAQ&usg=AOvVaw05nHylI06P-rK2dZncnkrJ" target=a_blank;>pointers incrementations</a>';
+      } 
+      function ascore(){
+        if(score==6)
+        alert('Excellent! You got 6/6! Well done!');
+    else if(score>=4)
+        alert('Great job! You scored '+score+'/6. Keep it up!');
+    else
+        alert(" You got " + score + "/6. Don't give up!");
+      }
+    </script>
+ <link rel="icon" type="image/png" href="logo.png">
+ <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400..700&family=Dosis:wght@200..800&family=Pacifico&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body >
+    <nav class="navbar">
+        <ul>
+           <li class="logo"><b><i><i class="fa-solid fa-laptop-code"></i>Think C </i></b></li>
+           
+           <li><a href="forms.html"><i class="fa-solid fa-question"></i> Quizzes</a></li> 
+           <li><a href="articles.html"><i class="fa-regular fa-newspaper"></i> Articles</a></li>
+           <li> <a href="freesources.html"><i class="fa-solid fa-chalkboard-user"></i> Free sources</a></li>
+           <li><a href="about.html"><i class="fa-solid fa-graduation-cap"></i> About</a></li>
+           <li><a href="index.html"><i class="fa-solid fa-house"></i> Home</a></li>
+        </ul>
+   </nav> <hr>
+   
+        <div class="fcontainer">
+           <div class="boxf" id="q1">
+           <b><i> 1. for loop and incrementations:</i> </b><br><hr> what does function <b><i>question1</i></b> return?<br>
+     <pre>int question1(){
+        int i=20;
+        for(int n=5;n;n--){
+            i=i--;
+            i=--i;
+            i--;
+            --i;
+        }
+    return i;}</pre>
+            <div class="answers" id="a1">
+                    <label><input type="radio" name="a1" value="A"> A) 20</label><br>
+                    <label><input type="radio" name="a1"value="B"> B) 16</label><br>
+                    <label><input type="radio" name="a1" value="C"> C) 12</label><br>
+                    <label><input type="radio" name="a1"value="D"> D) 8</label><br>
+                    <label><input type="radio" name="a1" id='t1'value="E"> E) 5</label><br>
+            <div id=i1><input type="button" value="submit" class="submit" onclick="checkanswer('a1',4); document.getElementById('i1').innerHTML='CHECK THE LINK BELOW:<BR><a href=\'https://www.geeksforgeeks.org/increment-and-decrement-operators-in-c/\' target=\'a_blank\'>Increment and Decrement Operators in C</a>;'"></div>
+            </div>
+            
+        </div>
+
+
+           <div class="boxf" id="q2">
+            <b><i> 2. if statement:</i> </b><br><hr>
+            <u>if(n)</u> means:<br><br>
+            <label><input type="radio" name="a2" value="A"> A)if(n==0)</label><br>
+            <label><input type="radio" name="a2" value="B"> B)if(n!=0)</label><br>
+            <label><input type="radio" name="a2" value="C"> C)if(n>0)</label><br>
+            <div id="aa"><input type="button" value="submit" class="submit" onclick="checkanswer('a2',1);  document.getElementById('aa').innerHTML='In C, the value 0 is considered false, and any value different from 0 is considered true. Therefore, if (n) means: if the expression inside the if is true, i.e., if n is true, which means n is not equal to 0.'"></div>
+           </div>
+
+           <div class="boxf" id="q3">
+            <b><i> 3. for loops and values:</i> </b><br><hr>
+        in the following statements: 
+       <pre>
+int i;
+for(i=0:i<10;i++);
+ </pre>       
+          When the loop ends, the value of <b>i</b> is:<br>
+            <label><input type="radio" name="a3" value="A"> A)9</label><br>
+            <label><input type="radio" name="a3" value="B"> B)10</label><br>
+            <label><input type="radio" name="a3" value="C"> C)11</label><br>
+            <div id="bb"><input type="button" value="submit" class="submit" onclick="checkanswer('a3',1); document.getElementById('bb').innerHTML='At the end of the last iteration, a becomes 10, and because of that, the loop stops.';">
+           </div>
+           </div>
+           <div class="boxf" id="q4">
+            <b><i> 4. Arrays and poiters:</i> </b><br><hr>
+            What does <b><i>question4</i></b> return? 
+            <pre></pre>
+int question4(){
+int array[]={10,20,30,40,50};
+int*p=array;
+*p++;
+++*p;
+return*p;
+}</pre> 
+<input type="text" class='a4' id='a4' placeholder="number without space:">
+<div id=textbut><input type="button" value="submit" class="submit" onclick="checktext();"></div>
+ </div>
+
+           <div class="boxf" id="q5">
+            <b><i> 5. arrays assignments:</i> </b><br><hr>
+            Which of the following is false?<br> 
+            <label><input type="radio" name="a5" id="c1">A)int array[5];<br>
+Array[5]={1,2,3,4,5};</label><br>
+            <label><input type="radio" name="a5" value="A" >B) int array[5]={1,2,3,4,5};</label><br>
+            <label><input type="radio" name="a5" value="B" >C)int x;<br>int p[]={1,2,3};<br>p=&x;</label><br>
+            <label><input type="radio" name="a5" value="C" >A and C</label><br>
+            <div id='t5'><input type="button" value="submit" class="submit" onclick="checkanswer('a5',3); document.getElementById('t5').innerHTML='<a href=\'https://www.geeksforgeeks.org/c-arrays/\' target=\'a_blank\'> C ARRAYS</a>';"></div>
+           </div>
+
+           <div class="boxf" id="q6">
+            <b><i> 6. linked lists:</i> </b><br><hr>
+            We can declare a structure then assign the values like this:<br>
+             struct a{int x;<br>
+                Char y;};<br>
+                Struct a; <br>
+                Struct a={1,'b'};<br>
+                <label><input type="radio" name='a6'value="true">true</label><br>
+                <label><input type="radio" name='a6'value="false">false</label><br>
+                <div id=t6><input type="button" value="finish" class="submit" onclick="checkanswer('a6',1); document.getElementById('t6').innerHTML=' we cannot declare a list then assign like this. you should use the . operator or cast what you are ssigning to the same type of the list.'; ascore();"></div>
+           </div>
+           </div>
+          
+</body>
+</html>

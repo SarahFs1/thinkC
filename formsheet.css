@@ -1,0 +1,81 @@
+.fcontainer{
+    display:flex;
+    
+    flex-wrap:wrap;
+    justify-content:center;
+    justify-items: center;
+    align-items: center;
+    
+}
+.boxf{
+    
+    margin:30px;
+    padding:20px;
+    animation-name: animat;
+    animation-duration: 1s;
+    border:solid 1px rgb(196, 233, 255);
+    box-shadow: 0px 0px 5px rgb(77, 235, 222);
+    height:300px;
+    margin-top: 45px;
+    width:300px;
+    background-color: rgba(245, 245, 220, 0.61);
+    color:#333333;
+    font-family: Cambria,Cochin, Georgia, Times, 'Times New Roman', serif;
+   
+    overflow:auto;
+}
+.boxf:hover{
+    box-shadow: 0px 0px 5px white;
+    
+}
+#q1{
+    background-color: #E6E6FA;
+    
+}
+#q2{
+    background-color: #FFC0CB;
+}
+#q3{
+    background-color:#E6E6FA;
+}
+#q4{
+    background-color: #FFC0CB;
+}
+#q5{
+    background-color:#F5F5F5;
+}
+#q6{
+    background-color: #F5F5F5;
+}
+.submit{
+    position: relative;
+    display: block;
+    animation-name: animat;
+    animation-duration: 1s;
+    border:solid 2px darksalmon;
+    font-size: 20px;
+    height:45px;
+    margin-left: auto;
+    margin-right: auto;
+    width:80px;
+    text-align: center;
+    color:darksalmon;
+    font-family:Georgia, Times, 'Times New Roman', serif;
+    border-radius:10%;
+    background-color: #f3fdff;
+    margin-top: 15px;
+   
+    
+}
+.submit:hover{
+   color:  #f3fdff;
+    background-color: darksalmon;
+    transform: scale(1.1,1.1);
+    border:solid 2px #f3fdff;
+}
+input{
+    background-color: rgba(255, 255, 255, 0.39);
+    outline: none;
+    border:none;
+    font-size: 23px;
+}
